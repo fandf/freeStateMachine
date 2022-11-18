@@ -93,6 +93,7 @@ public class Main {
                 .to(ArchiveState.SIGN)
                 .build();
 
+
         stateMachineConfig.from(ArchiveState.SIGN)
                 .behavior(ArchiveBehavior.SIGN_PASS)
                 .action(new SignPassHandler())
@@ -121,13 +122,6 @@ public class Main {
                 .to(ArchiveState.SIGN)
                 .build();
 
-        stateMachineConfig.from(ArchiveState.VERIFY)
-                .behavior(ArchiveBehavior.VERIFY_PASS)
-                .action(new VerifyPassHandler())
-                .user(UserInfo.of("123", "张三"))
-                .to(ArchiveState.FINISH)
-                .build();
-
         stateMachineConfig.from(ArchiveState.SIGN)
                 .behavior(ArchiveBehavior.SIGN_PASS)
                 .action(new SignPassHandler())
@@ -140,6 +134,13 @@ public class Main {
                 .action(new ApprovePassHandler())
                 .user(UserInfo.of("123", "张三"))
                 .to(ArchiveState.VERIFY)
+                .build();
+
+        stateMachineConfig.from(ArchiveState.VERIFY)
+                .behavior(ArchiveBehavior.VERIFY_PASS)
+                .action(new VerifyPassHandler())
+                .user(UserInfo.of("123", "张三"))
+                .to(ArchiveState.FINISH)
                 .build();
 
         return new StateMachineInstance<>(stateMachineConfig);

@@ -24,7 +24,7 @@ public class StateMachineConfig<S, B, A, U> {
      */
     private A action;
     /**
-     * 动作
+     * 用户
      */
     private U user;
     /**

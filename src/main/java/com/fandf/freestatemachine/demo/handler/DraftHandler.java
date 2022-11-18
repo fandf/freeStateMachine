@@ -5,7 +5,6 @@ import com.fandf.freestatemachine.core.BaseStateMachine;
 import com.fandf.freestatemachine.core.DataContext;
 import com.fandf.freestatemachine.core.StateMachineInstance;
 import com.fandf.freestatemachine.demo.model.ArchiveContext;
-import com.fandf.freestatemachine.demo.model.ArchivePermit;
 import com.fandf.freestatemachine.demo.model.ArchiveState;
 import lombok.extern.slf4j.Slf4j;
 
